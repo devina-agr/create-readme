@@ -1,10 +1,11 @@
 import os
 import json
 import requests
-from dotenv import load_dotenv
-
-load_dotenv()
-api_key = os.getenv("API_KEY")
+from config import API_KEY
+# from dotenv import load_dotenv
+#
+# load_dotenv()
+# api_key = os.getenv("API_KEY")
 
 
 def create_readme(directory):
@@ -36,7 +37,7 @@ def create_readme(directory):
 
     ai_response = requests.post(
         "https://api.gemini.com/generate",
-        headers={"Authorization": f"Bearer {api_key}"},
+        headers={"Authorization": f"Bearer {API_KEY}"},
         json={"prompt": prompt},
     )
 
