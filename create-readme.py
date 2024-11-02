@@ -12,7 +12,7 @@ def create_readme(directory):
     files = []
     for root, dirs, filenames in os.walk(directory):
         for i in filenames:
-            files.append(os.path.join(root, i))
+            files.append(os.path.join(root, i))  
 
     file_data = []
     for path in files:
